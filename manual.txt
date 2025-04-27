@@ -1,0 +1,22 @@
+Sistema de Análise de Vibração - WT9011DCL-BT5.0
+
+1. Abrir o arquivo "index.html" no navegador Chrome ou Edge.
+2. Login:
+   Usuário: admin
+   Senha: admin123
+3. Preencher Nome do Cliente e Nome do Equipamento.
+4. (Opcional) Upload de Imagem.
+5. Conectar Sensor Bluetooth WT9011DCL.
+6. Iniciar Coleta.
+7. Coletar dados reais e visualizar Gráficos.
+8. Gerar Relatório PDF automático.
+9. Histórico de Medições disponível.
+
+FAQ:
+- Sensor não conecta?
+  > Confirme se o Bluetooth está ligado. Utilize Chrome/Edge atualizados.
+
+- Dados não aparecem?
+  > Reinicie a coleta e verifique a conexão.
+
+Versão: 1.0 Profissional

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoramento de Vibração - WT9011DCL</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Tela de Login -->
+    <div id="loginPage" class="centered">
+        <h1>Login</h1>
+        <input type="text" id="username" placeholder="Usuário">
+        <input type="password" id="password" placeholder="Senha">
+        <button onclick="login()">Entrar</button>
+        <p id="loginError"></p>
+    </div>
+
+    <!-- Tela Principal -->
+    <div id="mainPage" style="display:none;">
+        <header>
+            <h1>Monitoramento de Vibração - WT9011DCL</h1>
+            <button onclick="logout()">Sair</button>
+        </header>
+
+        <section id="clientInfo">
+            <h2>Informações Cliente/Equipamento</h2>
+            <input type="text" id="clientName" placeholder="Nome do Cliente">
+            <input type="text" id="equipmentName" placeholder="Nome do Equipamento">
+            <input type="file" id="imageUpload" accept="image/*">
+            <select id="sensorCount">
+                <option value="1">1 Sensor</option>
+                <option value="2">2 Sensores</option>
+                <option value="3">3 Sensores</option>
+                <option value="4">4 Sensores</option>
+            </select>
+        </section>
+
+        <select id="machineClass">
+            <option value="1">Classe I - Pequenas (≤ 15 kW)</option>
+            <option value="2">Classe II - Médias (15 kW a 75 kW)</option>
+            <option value="3">Classe III - Grandes (> 75 kW)</option>
+            <option value="4">Classe IV - Muito Grandes (> 300 kW)</option>
+          </select>
+          
+
+        <section id="controls">
+            <button onclick="connectSensor()">Conectar Sensor</button>
+            <button onclick="startCollection()">Iniciar Coleta</button>
+            <button onclick="stopCollection()">Parar Coleta</button>
+            <button onclick="exportXLSX()">Exportar Dados XLSX</button>
+            <button onclick="importData()">Importar Dados XLSX/CSV</button>
+            <button onclick="predictFailure()">Prever Falha (IA)</button>
+        </section>
+
+        <div id="progressBar">
+            <div id="progress"></div>
+        </div>
+
+        <section id="charts">
+            <h2>Gráficos em Tempo Real</h2>
+            <canvas id="accelerationChart"></canvas>
+            <canvas id="velocityChart"></canvas>
+            <canvas id="displacementChart"></canvas>
+
+            <h2>Gráficos FFT (Análise Espectral)</h2>
+            <canvas id="fftChartX"></canvas>
+            <canvas id="fftChartY"></canvas>
+            <canvas id="fftChartZ"></canvas>
+        </section>
+
+        <section id="diagnostic">
+            <h2>Diagnóstico de Vibração</h2>
+            <div id="diagnosticResult">Nenhuma coleta realizada.</div>
+        </section>
+
+        <section id="history">
+            <h2>Histórico de Medições</h2>
+            <div id="historyList"></div>
+        </section>
+    </div>
+
+    <!-- Bibliotecas -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+
+    <!-- Sistema -->
+    <script src="config.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
