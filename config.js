@@ -1,4 +1,4 @@
 // Configurações iniciais
-const defaultUser = "admin";
-const defaultPass = "1234";
+const defaultUser = "Admin";
+const defaultPass = "Admin";
 
